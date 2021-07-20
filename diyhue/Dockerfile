@@ -31,11 +31,9 @@ RUN curl -J -L -o $diyhue.tar.gz "https://github.com/diyhue/diyHue/archive/refs/
 WORKDIR /opt/hue-emulator
 
 # Install diyHue
-RUN mv /diyhue/BridgeEmulator/web-ui/ 											./web-ui/
-RUN mv /diyhue/BridgeEmulator/functions/ 										./functions/
-RUN mv /diyhue/BridgeEmulator/protocols/ 										./protocols/
-RUN mv /diyhue/BridgeEmulator/HueEmulator3.py /diyhue/BridgeEmulator/debug/clip.html 	./
-RUN mv /diyhue/BridgeEmulator/genCert.sh /diyhue/BridgeEmulator/openssl.conf 			./
+RUN mv /diyhue/BridgeEmulator/											./
+RUN mv -f /diyhue/BridgeEmulator/HueEmulator3.py /diyhue/BridgeEmulator/debug/clip.html 	./
+RUN mv -f /diyhue/BridgeEmulator/genCert.sh /diyhue/BridgeEmulator/openssl.conf 			./
 
 # Copy additional local build files
 COPY rootfs ./
