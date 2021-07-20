@@ -16,7 +16,7 @@ ENV DIYHUE_VERSION=beta
 ENV WORKING_DIR=/opt/hue-emulator
 
 # Create the needed folders
-RUN mkdir diyhue config ${WORKING_DIR}
+RUN mkdir diyhue export ${WORKING_DIR}
 
 # Install all needed dependencies
 RUN apk add -q -u python3 openssl nmap psmisc iproute2 alpine-sdk build-base
@@ -50,7 +50,7 @@ ARG BUILD_REF
 ARG BUILD_VERSION
 
 ## Document volume
-VOLUME ["/export"]
+VOLUME ["/opt/hue-emulator/export"]
 
 # Labels
 LABEL \
