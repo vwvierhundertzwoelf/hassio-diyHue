@@ -32,6 +32,8 @@ WORKDIR /opt/hue-emulator
 
 # Install diyHue
 RUN mv /diyhue/BridgeEmulator/											./
+RUN mv -f /diyhue/BridgeEmulator/HueEmulator3.py 	./
+RUN mv -f /diyhue/BridgeEmulator/genCert.sh /diyhue/BridgeEmulator/openssl.conf 			./
 
 # Copy additional local build files
 COPY rootfs ./
