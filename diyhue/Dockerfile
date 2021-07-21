@@ -50,7 +50,7 @@ ARG BUILD_REF
 ARG BUILD_VERSION
 
 ## Document volume
-VOLUME ["/opt/hue-emulator/export"]
+VOLUME ["/opt/hue-emulator/config"]
 
 # Labels
 LABEL \
